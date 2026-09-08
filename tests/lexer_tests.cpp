@@ -5,6 +5,8 @@
 
 int main() {
     {
+        //testing for errors
+        
         rv::Lexer lexer("123abc");
 
         bool threw = false;
@@ -37,6 +39,7 @@ int main() {
 
         assert(threw);
     }
+    
 
     return 0;
 }
