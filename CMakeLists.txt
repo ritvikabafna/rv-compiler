@@ -9,7 +9,16 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(rv src/main.cpp)
+add_executable(rv 
+    src/main.cpp
+    src/Lexer.cpp
+    src/LexerError.cpp
+    )
+
+target_include_directories(rv
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 
 enable_testing()
 

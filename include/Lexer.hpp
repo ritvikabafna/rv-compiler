@@ -21,14 +21,26 @@ private:
     char peek() const;
     char peekNext() const;
     bool match(char expected);
+    void skipComment();
+    
 
     Token scanIdentifier();
     Token scanNumber();
+    Token scanOperator();
+    Token scanDelimiter();
+    Token scanString();
 
     std::string source_;
     std::size_t current_ = 0;
     std::size_t line_ = 1;
     std::size_t column_ = 1;
+
+    Token makeToken(
+        TokenKind kind,
+        std::size_t start,
+        std::size_t startLine,
+        std::size_t startColumn
+    );
 };
 
 } // namespace rv
